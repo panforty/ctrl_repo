@@ -14,7 +14,7 @@ class minecraft {
   }
 
   file { '/opt/minecraft/eula.txt':
-    ensure => file,
+    ensure  => file,
     content => 'eula=true',
   }
 
@@ -25,6 +25,6 @@ class minecraft {
 
   service { 'minecraft':
     ensure => running,
-   enable => true,
+    enable => true,
   }
 }
