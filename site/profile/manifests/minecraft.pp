@@ -1,5 +1,5 @@
 class profile::minecraft {
-  include ssh_server
+  include profile::ssh_server
   # just wrapper
   include minecraft
 }
