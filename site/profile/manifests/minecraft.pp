@@ -1,5 +1,5 @@
 class profile::minecraft {
-  include profile::ssh_server
-  # just wrapper
-  include minecraft
+  class { 'minecraft':
+    install_dir => '/srv/minecraft',
+  }
 }
