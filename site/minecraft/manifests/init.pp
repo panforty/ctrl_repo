@@ -23,7 +23,7 @@ class minecraft (
 
   file { '/etc/systemd/system/minecraft.service':
     ensure => file,
-    template => template('minecraft/minecraft.service.erb'),
+    content => template('minecraft/minecraft.service.erb'),
   }
 
   service { 'minecraft':
