@@ -10,7 +10,6 @@ class profile::web (
 
   class { 'apache':
     default_vhost => false,
-    suphp_engine => off,
   }
 
   apache::vhost { 'local':
@@ -19,6 +18,7 @@ class profile::web (
     port    => '8080',
     docroot => "${web_dir}",
     ip_based => true,
+    suphp_engine => off,
   }
 
   file { "${web_dir}":
