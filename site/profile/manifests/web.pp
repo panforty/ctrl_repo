@@ -1,4 +1,6 @@
-class profile::web {
+class profile::web (
+  $web_dir => '/srv/www/local',
+){
   include nginx
 
   nginx::resource::server { 'web.puppet.vm':
@@ -6,16 +8,24 @@ class profile::web {
     proxy       => 'http://localhost:8080',
   }
 
-#  class { 'apache':
-#    default_vhost => true,
-#  }
+  class { 'apache':
+    default_vhost => false,
+  }
 
   apache::vhost { 'local':
     default_vhost => true,
     ip      => '127.0.0.1',
     port    => '8080',
-    docroot => '/var/www/local',
+    docroot => "${web_dir}",
     ip_based => true,
   }
 
+  file { "${web_dir}":
+    ensure => directory,
+  }
+
+  file { "${web_dir}/index.html":
+    ensure => file,
+    content => "<html><body><h1>Ahoj</h1></body></html>",
+  }
 }
