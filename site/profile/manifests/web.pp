@@ -7,6 +7,7 @@ class profile::web {
   }
 
   apache::vhost { 'local':
+    default_vhost => true,
     ip      => '127.0.0.1',
     port    => '8080',
     docroot => '/var/www/local',
