@@ -6,9 +6,9 @@ class profile::web {
     proxy       => 'http://localhost:8080',
   }
 
-  class { 'apache':
-    default_vhost => true,
-  }
+#  class { 'apache':
+#    default_vhost => true,
+#  }
 
   apache::vhost { 'local':
     default_vhost => true,
