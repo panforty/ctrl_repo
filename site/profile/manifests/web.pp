@@ -10,6 +10,7 @@ class profile::web (
 
   class { 'apache':
     default_vhost => false,
+    suphp_engine => off,
   }
 
   apache::vhost { 'local':
