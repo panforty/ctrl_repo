@@ -1,3 +1,3 @@
-# ctrl_repo
+# Controll repository
 
-test
+Learning Puppet linkedin learning course.
