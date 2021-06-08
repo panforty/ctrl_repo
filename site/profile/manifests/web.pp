@@ -18,7 +18,7 @@ class profile::web (
     port    => '8080',
     docroot => "${web_dir}",
     ip_based => true,
-    suphp_engine => off,
+    suphp_engine => 'off',
   }
 
   file { "${web_dir}":
